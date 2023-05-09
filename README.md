@@ -10,3 +10,6 @@ With the information contained here people should be able to install/uninstall M
 * AddOns - All the MockbaMod add-ons
 * Apps - Apps which can be called from the load menu
 <hr>
+
+### Latest Version
+4.01 - https://mega.nz/file/QS5HTbKB#Obt_Fgr-nqv6kwpDxgwoh6gWDfMU2Nca0vCI9DSJNp8
