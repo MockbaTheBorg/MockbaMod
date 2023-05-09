@@ -38,7 +38,8 @@ CLEANUP() {
 CLEANUP
 RANDOM=$$
 
-data=$(curl -sLf "https://raw.githubusercontent.com/intelliriffer/MOCKBA-ADDONS-DEPOT/master/APPLIST.csv?v=$RANDOM")
+
+data=$(curl -sLf "https://raw.githubusercontent.com/MockbaTheBorg/MockbaMod/main/AddOns/addon-manager.psv?v=$RANDOM")
 
 if [ $? -ne 0 ]; then
     RED "Error: Unable To Connect To Online Repository! continuing with Local..."
