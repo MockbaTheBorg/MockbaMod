@@ -12,4 +12,5 @@ With the information contained here people should be able to install/uninstall M
 <hr>
 
 ### Latest Version
-4.01 - https://mega.nz/file/QS5HTbKB#Obt_Fgr-nqv6kwpDxgwoh6gWDfMU2Nca0vCI9DSJNp8
+MockbaMod: 3.2.4.19 - https://mega.nz/file/ofY2ga4I#-SkuUFuAl6rWif8kQ6XXua3SM_0D4KEwblXMmojCArg <br>
+SD Card: 4.01 - https://mega.nz/file/QS5HTbKB#Obt_Fgr-nqv6kwpDxgwoh6gWDfMU2Nca0vCI9DSJNp8
