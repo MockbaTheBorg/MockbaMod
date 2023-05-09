@@ -2,7 +2,7 @@
 #############################  Mockba MOD Addons Manager Script  #################################
 # Author: Amit Talwar <ghttps://github.com/intelliriffer/>                                       #                         
 # Description: This Script is Meant to be used as Interactive Addons Manager for Mockba Mod      #
-# Usage: Meant to be copied to /usr/bin and for usage, Terminal Command:  addon-manager                                                                                                #
+# Usage: Meant to be copied to /usr/bin and for usage, Terminal Command:  addon-manager          #
 ##################################################################################################
 
 mmPath=$(cat /dev/shm/.mmPath)
