@@ -1,0 +1,197 @@
+#!/bin/sh
+#############################  Mockba MOD Addons Manager Script  #################################
+# Author: Amit Talwar <ghttps://github.com/intelliriffer/>                                       #                         
+# Description: This Script is Meant to be used as Interactive Addons Manager for Mockba Mod      #
+# Usage: Meant to be copied to /usr/bin and for usage, Terminal Command:  addon-manager                                                                                                #
+##################################################################################################
+
+mmPath=$(cat /dev/shm/.mmPath)
+. $mmPath/MockbaMod/env.sh
+tempdir=$mmPath/.minstaller
+addonDir="$mmPath/AddOns"
+
+CYAN() {
+    echo -e "\e[36m$1\e[0m"
+}
+BLUE() {
+    echo -e "\e[36m$1\e[0m"
+}
+RED() {
+    echo -e "\e[31m$1\e[0m"
+}
+LRED() {
+    echo -e "\e[91m$1\e[0m"
+}
+GREEN() {
+    echo -e "\e[32m$1\e[0m"
+
+}
+YELLOW() {
+
+    echo -e "\e[33m$1\e[0m"
+}
+
+CLEANUP() {
+    rm -rf "$tempdir" 2>/dev/null
+}
+
+CLEANUP
+RANDOM=$$
+
+data=$(curl -sLf "https://raw.githubusercontent.com/intelliriffer/MOCKBA-ADDONS-DEPOT/master/APPLIST.csv?v=$RANDOM")
+
+if [ $? -ne 0 ]; then
+    RED "Error: Unable To Connect To Online Repository! continuing with Local..."
+fi
+
+l=1
+echo
+ifs=IFS
+IFS='
+'
+NL=$'\n'
+
+CHOICE() { ##creates a menu from list of items from 1:
+    lchoice=0
+
+    while [ $((lchoice)) != $lchoice ] || [ $((lchoice)) -gt "$1" ] || [ $((lchoice)) -lt "1" ]; do
+        YELLOW "\nPlease Enter an option number from below:\n"
+        echo -e "$2"
+        read lchoice
+    done
+    return $lchoice
+}
+
+if [ $? -ne 0 ]; then
+    RED "Unable to download Apps List - Exiting.."
+    exit 0
+fi
+
+FETCH() {
+
+    id=$(echo "$1" | cut -d'|' -f1)
+    url=$(echo "$1" | cut -d'|' -f2)
+    echo "Downloadding [$id] from: $url"
+    tarfile="./addon.zip"
+
+    mkdir -p "$tempdir"
+    cd "$tempdir"
+    rm "$tarfile" 2>/dev/null
+
+    if [[ "$url" == *https://mega.nz* ]]; then
+        megadl "$url" --path="$tarfile" 2>/dev/null
+    else
+        curl -Lf -o ./addon.tar "$url"
+    fi
+
+    if [ ! -f "$tarfile" ]; then
+        RED "ERROR: Unable to Download Addon!..\nLikely 404 Not Found. or Refused.."
+        return 1
+    fi
+
+
+    echo ">>> Extracting Addon Payload...Please Wait..."
+    ##tar -xf ./addon.tar
+    unzip -o "$tarfile" | awk 'BEGIN {ORS=" "} {if(NR%10==0)print "."}'
+
+    if [[ -f ./install.sh ]]; then
+        ./install.sh
+        CLEANUP
+    else
+        RED "Error! No Install Script found in Addon"
+        CLEANUP
+    fi
+
+}
+
+MANAGE() {
+    installed=$(find "$addonDir" -name "manage.sh" -maxdepth 2 | sort)
+    ix=0
+    choice=0
+    options=""
+
+    for I in $installed; do
+        ix=$((++i))
+        d=$(basename $(dirname "$I"))
+        options="$options $(YELLOW $ix)) Manage: $(GREEN $d)${NL}"
+    done
+    
+    options="$options $((ix + 1))) $(LRED Exit)"
+    
+    CHOICE $((ix + 1)) "$options"
+    choice=$?
+
+    if [ "$choice" -le "$ix" ]; then
+
+        msel=$(echo "$installed" | awk "NR==$choice")
+        d=$(basename $(dirname "$msel"))
+        options="$(GREEN "1) Enable") $d${NL}$(RED "2) Disable") $d${NL}$(LRED "3) Uninstall")$d${NL}4) Exit"
+        CHOICE 4 "$options"
+        op=$?
+        sPath=$(dirname "$msel")
+    
+        if [ "$op" -eq "1" ]; then
+            "$sPath/manage.sh" ENABLE
+        fi
+
+        if [ "$op" -eq "2" ]; then
+            "$sPath/manage.sh" DISABLE
+        fi
+    
+        if [ "$op" -eq "3" ]; then
+            "$sPath/manage.sh" UNINSTALL
+        fi
+    fi
+
+}
+
+MENU() {
+
+    CYAN "#####################################################"
+    CYAN "              MOCKBA MOD ADDONS REPO                 "
+    CYAN "#####################################################\n"
+
+    cnt=0
+    options=""
+    for line in $data; do
+        cnt=$((cnt + 1))
+
+        id=$(GREEN $(echo "$line" | cut -d'|' -f1))
+        ver=$(GREEN $(echo "$line" | cut -d'|' -f3))
+        desc=$(CYAN $(echo "$line" | cut -d'|' -f4))
+        #echo "$cnt). $id"
+        options="$options$(YELLOW $cnt))   Install: $id v$ver ($desc)${NL}"
+    done
+
+    opt=0
+    manage=$((cnt + 1))
+    xit=$((cnt + 2))
+
+    options="$options$(YELLOW $manage))   $(YELLOW "Manage Installed")${NL}$(YELLOW $xit))   $(LRED Exit)"
+    CHOICE $xit "$options"
+    opt=$?
+
+    if [ "$opt" -lt "$xit" ]; then
+
+        if [ "$opt" -eq "$manage" ]; then
+            MANAGE
+        else
+            sel=$(echo "$data" | awk "NR==$opt")
+
+            FETCH "$sel"
+            echo
+            prmpt="$(YELLOW 'Press Enter/Return to continue..  ') $(LRED 'x to exit ')"
+            echo "$prmpt"
+
+            read junk
+            if [ "$junk" != "x" ]; then
+                echo
+                MENU
+            fi
+        fi
+    fi
+}
+
+MENU
+
+IFS=$ifs
