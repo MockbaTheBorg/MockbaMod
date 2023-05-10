@@ -221,7 +221,7 @@ ts=$(date +"%Y-%m-%d_%H-%M-%S")
 fn="$mmPath"/Screenshots
 tfile="$fn/$ts.png"
 mkdir -p "$fn" 2> /dev/null
-"$mmTools"/ffmpeg -y -nostdin -hide_banner -loglevel error -crtc_id 0 -framerate 60 -f kmsgrab -i - -vf 'hwdownload,format=bgr0,transpose=1' -vframes 1 -c:v png "$tfile" &> /dev/null
+ffmpeg -y -nostdin -hide_banner -loglevel error -crtc_id 0 -framerate 60 -f kmsgrab -i - -vf 'hwdownload,format=bgr0,transpose=1' -vframes 1 -c:v png "$tfile" &> /dev/null
 echo "Screenshot Should have been saved to: $tfile"
 exit 0;
 fi
