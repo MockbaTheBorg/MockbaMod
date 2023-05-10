@@ -14,8 +14,10 @@ cd $mmLua
 app=`luajit menu.lua`
 cd -
 echo "Preparing $app" >> $mmLogs/boot.log
-export ANYCTRL_NAME="Mockba Automation Out"
-export LD_PRELOAD=$mmLibs/tkgl_anyctrl_lt.so
+
+[[ -f "$mmANYCTL_VAR" ]] && export ANYCTRL_NAME="$(cat "$mmANYCTL_VAR")"
+[[ -f "$mmLD_PRELOAD_VAR" ]] && export LD_PRELOAD="$(cat "$mmLD_PRELOAD_VAR")"
+
 echo "Executing $app" >> $mmLogs/boot.log
 echo "[$@]" >> $mmLogs/boot.log
 if test "$app" == "MPC"; then
