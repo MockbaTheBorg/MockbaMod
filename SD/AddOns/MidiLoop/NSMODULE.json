@@ -1,0 +1,12 @@
+{
+  "NAME": "MidiLoop",
+  "DESCRIPTION": "Adds Super Powers to the Akai Force",
+  "PROCESSNAME": "midiloop",
+  "DIRNAME": "MidiLoop",
+  "FILENAME": "midiloop",
+  "BACKGROUND": true,
+  "AUTOLAUNCHABLE": true,
+  "ARGUMENTS": [
+    
+  ]
+}

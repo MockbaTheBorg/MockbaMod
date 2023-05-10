@@ -1,0 +1,533 @@
+#####################################################################
+ AKAI FORCE MOCKBA MIDILOOP MODULE V4.3 Beta
+ ~~~brought to you some very dedicated warranty voiders! ;=)
+#####################################################################
+
+
+Warning: This is Very much experimental stuff and many things will work, some wont and some might even cause crashes.
+You use these at your own risk!.
+
+$$$ IF YOU CAN'T READ/FOLLOW INSTRUCTIONS, You should not be using Mods. Period!
+
+#####################################################################
+
+**** Installation:**************************************
+
+1: Copy Files in Tools to your Mockba SD-CARD/Tools
+2: Copy Files in Libs to your Mockba SD-CARD/Libs
+3: Optional Copy the Included x xpm (Midi Mapping) File to SD card.
+4: Recommended: Backup your mockba sd card before proceeding.
+
+**** Configuration: *********************************************
+
+1: Go to Midi Preferences on Force and
+	 Enable [Control] for Mockba Automation Control Port
+	 DO "NOT" enable track or global for this port.
+
+2: In Midi Output Section Enable [Track] for Mockba Automation  In.
+
+3: For Follow Actions / Automation, Create a Midi Track and route its output to Mockba Automation In.
+
+4: Load the Included Xpm (Midi Mapping Template) into this track.
+
+*** Note: For Lot Of Special Internal Functions (some factory files need to be removed from firmware)
+         (do not worry, mockba Mod already uses overlay for these locations, so nothing is deleted.
+        On Launch of MidiLoop, those unneeded files are automatically renamed and a custom midi 
+        function mapping file is copied to /usr/share/Akai/SME0/Midi Learn). If you ever want to get back the original Files.
+        You can Run the included midiloop_script.sh script with 10 as ID parameter ex.from shell . 
+    
+            /media/662522/Tools/midiloop_script.sh RESTORE
+
+        The midiloop_script.sh file has 8 custom User script functions that you can add your own shell scripts or code.
+
+
+##### QUICK LIST OF SOME FEATURES #######################
+
+1: Shift Button for midi Editing: Holding Shift will let you select different midi events/notes in the Clip (not possible natively on Force as of yet)
+
+2: Delete Button: Will delete selected midi events when editing a clip.
+
+3: Macros: Each Command Trigger Can be a Macro, i.e multiple functions assigned to a single Trigger (trigger can be CC, Note, or Force Control Surface Shortcut.)
+ for example CC_23 = PAGE-2 LAUNCH-SCENE-1 will navigate to Row/Scene Number 9 and Launch that.
+
+4: Follow Actions / Random Scene Launching: With your Automation Track (midi Track output Set to Mockba Automation In) you can add CC or Note Triggers as Automation to the clip and create chains. Next Scene and Prev Scene commands actions are also available.
+
+5: Full Remote Control Support: Almost All Functions Provided in can be triggered from External Midi Controller/Foot Controller.
+	
+	You can either program your midi controller to send already Mapped CC messages , or you can edit the Config files to Create a Mapping of your midi Controller.
+
+	If you have connected your Midi Controller Via Usb, you
+	can provide its name in the Config File and It will be automatically connected. and ready.
+
+6: If and when you make changes to Config (Recommended to tailor it to your needs), 
+    you can run the following command from shell to check if file is ok.
+
+	 /media/662522/Tools/midiloop test 2>/dev/null
+
+7: Video Capture/ScreenShot Capture.:
+        when you start VIDEO-CAPTURE via a Shortcut, the SELECT button Force will start blinking.
+        to STOP video Capture use the same shortcut again. timestamped Video will be saved to: /media/662511/Screenshots
+ 
+8: ON/OFF Support: run the script: 
+        /media/662522/Tools/midiloop_script.sh ON
+        /media/662522/Tools/midiloop_script.sh OFF
+
+9: Multiple config Support. You can create multiple config files and store them into /media/662522/Tools/configs
+        use the following command to list available configs:
+         /media/662522/Tools/midiloop_script.sh CONFIG
+
+        use the following command to load a config named: basic
+         /media/662522/Tools/midiloop_script.sh CONFIG basic
+10: Hardware button remap: Certain Hardware buttons (shortcuts) on Force Control surface can be set to  a different function than
+    the factory defaults;
+    arrow keys, shift+arrow keys, navigate, assign a-b, +/- tap-tempo,clip-stop (all can be reassigned). 
+    Their original function can be assigned to different shortcuts too.
+
+11. Midi Loopback : Any Midi Messages sent to "Mockba Automation In" on channels other than master Control Channel, will be echoed back on "Mockba LoopBack" as if they are coming from an external midi controller.
+   you can use these for a lot of stuff that would otherwise require  physical hardware loopback (midiOut -> midiIn) via a cable.
+   Please note: there Is a problem with midi note off messages at times causing hung notes (AKAI is aware of this bug, so expect a fix from them.)
+
+********************************************************************
+IMPORTANT: WHen using any combo shortcuts like SHIFT+ARROW-UP, SHIFT+LAUNCH-1, the modifier (SHIFT) must be released and pressed again for another shortcut.
+you CANNOT simply hold a modifier and expect the shortcuts to work. This is by design to prevent shortcut lockups. 
+********************************************************************
+
+###  FEATURES EXTENDED  USABILITY CAPABILITIES
+
+This Module also creates a virtual user space input device (to send qwerty commands to kernel)
+
+We now also can generate  generates touch events. so we can now trigger screen events and combos Like Menu Page and Touch on third item.
+Or go to sample page and touch on auto sampler button pop up autosampler from a shortcut , or record arm it.
+The best use case for this is the looper. you can map touch events to a midi foot controller (not just touch events) and control most functions of that.
+
+
+The Currently Enabled Usability Hacks..
+
+SHIFT:  When editing Midi, holding shift allows you to select midi notes from different regions in clip for multi editing.
+DELETE: When editing Midi, Pressing Delete will delete any Selected Notes
+
+
+========== CONFIGURATION SETTINGS ===================
+These are important settings that must be in your config file.
+
+CONTROL-MIDI-CHANNEL: (Values 1-16)  is mandatory and Midi loop will only respond to messages on this Midi Channel.
+ 
+TRIGGER-THRESHOLD: The CC value or Note Velocity that will Trigger the Command. default is 127.
+                    Some Controllers might send value of 64 instead of 127. So set it accordingly.
+USE-ABSOLUTE-TRIGGER: 0 or 1: if 1 Only values equal to TRIGGER-THRESHOLD will be Valid. If 0 any Value equal or above Threshold will be considered valid. Use Values lower than 127 with caution.
+
+MIDI-HW-PORT-NAME : If Provided the Midi input port name will be directly opened behind the scenes for
+                  midi input. For Example a hardware controller. So you do not have to/need  create a separate automation track.
+                  Midi Port names can be found using the following shell command on Force:
+                   aconnect -i
+                    (used sub port full name , (like 0,1 etc and not the client xxx))
+
+MACRO_DELAY : Time in milliseconds between multiple serial Commands (10 is default).
+
+TOUCH-DELAY : Time to Wait after a touch , before next command (as in a macro) usually 250 (250ms) should be good. 
+
+POPUP-WAIT-TIME = 50 # (this is relative tempo latency) in ms (min: 5) to wait after a touch for pop up window to appear.
+
+USE-ALT-REL-TEMPO-METHOD # 1 or 0, Relative Tempo Automation has been programmed in two different ways, use whichever works best. for Tempo++x1 Tempo--x1 messages..
+USE-ALT-ABS-TEMPO-METHOD : absolute tempo changes have been programmed using two different strategies. When not using alt method sometimg triggered tempo is 1 or 2 bpm lower (this is something do do with force ignoring some messages,) hence the alternate method what will type inn the desired tempo. very accurate but has latency.
+
+TEMPO-WINDOW-TIMEOUT # default: 1200 is seems good overall, you can reduce this a bit if your projects don't use tempos below 60.. 
+                     any tempo events received within this period will assume that tempo window is open and will only send value change triggers.
+
+SPECIAL-FUNCTIONS-ON : 0 or 1=enabled: will disable many of MPC-FUNCTIONS as well as many other commands like REBOOT , RESTART etc.
+
+
+LOG-OUTPUT = 1  #or 0, will print out output messages to /tmp/midiloop.log
+                #you can use the command tail -f /tmp/midiloop.log to monitor realtime output. turn this off when everything is working fine..
+
+
+NUM-PAGES  # Assume The project to have  NUM-PAGES x 8 Scenes. This Allows Jumping to Different Scene pages from a single command.
+             Basically the command sends NUM-PAGES X 8 up arrow 
+
+PAGING-DELAY=1 # ms the higher the number the longer it takes for Page changes, keep this number low 1-10ms
+
+PAGE-DEBOUNCE = 250 #any PAGE change commands within PAGE-DEBOUNCE time between two PAGE events will be rejected. usually 250 should be enough for a single page event to complete. depends on paging delay.
+DEBOUNCE-TIME = 100 # in ms, any special function  requests like HALF-SPEED, HUMANIZE-CLIP, RANDOMIZE-CLIP... within less than this will be rejected (pad macros send triggers two times so this filters out the second one.) 
+
+LOOPBACK-ON = 1 or 0 ; when 1 a MockbaLoopback midi oport will be created and All midi events sent to mockba Automation in or Hw port will be echoed back to Loopback port like coming from external hardware.
+LOOPBACK-ROUTE-16-TO-CONTROL-CH  : due the a recent bug in latest firmware, channel 16 seems to get ignored. this setting will enable all mesages comong to h/w port on ch 16 to echo on Control channel on Loopback port (default 1)
+
+************** THINGS TO NOTE ********************
+Please Note: Clip Functions (Left,right, next previous are relative to Clip Selection based on other Commands in Midi Loop)
+
+Avoid these CCs (0,1,9,10,11,64,121 and above..)
+
+## Almost All assignments can be Macros (Multiple commands separated by Space)
+ for Example :
+        CC_4 = PAGE-3 LAUNCH-RAND-ALL
+        will Navigate to scenes 17-24 and Launch one of the Scenes Randomly
+        Similarly -  
+        CC_5 = PAGE-5 WAITx10 LAUNCH-SCENE-3
+                Will Launch AbSolute Scene Number: (8 * (5-1)) + 3 = Scene 33 , PAGE-1 LAUNCH-SCENE-3 = (8* (1-1)) + 3 = Scene 3.
+                or if going reverse. Scene: 55, Page = realPart (55/8) + 1; Scene Number: (55- (real 55/8) * 8).
+                or  55/8 = 6.875; real(6.875) = 6, so PAGE is 6+1=7 and scene  55-(6*8): 7. thus Macro would be PAGE-7 LAUNCH-SCENE-7
+                if you are programming these in Midi Clips, make sure to give some gap between PAGE and Launch Commands, usually about 1/2 bar should be good
+                WAITx10 tells it to wait 10ms before triggering LAUNCH button.
+            
+
+##########################################################################
+                          AVAILABLE TRIGGERS
+##########################################################################
+
+Triggers are events that cause an action pr actions in our case,
+for example CC_20 is CC Number 20, NOTE_36 = Midi Note#: 30.
+There are Also special Shortcut triggers added,  to use Unused (non factory) Force Button Combinations as Triggers.
+
+*** Midi Triggers(via Direct midi hardware or Sent to "Mockba Automation In" midi port on Aka Force )
+
+1: CC_1 - CC_127 (CC_32 is filtered as its used for *Bank Change LSB message, more on this later..)
+2: NOTE_0 NOTE_127 (Entire Midi Note Range.)
+3: Bank Change LSB (CC#32) and Program Change :The BankChange and Program change combined 
+   Perform Absolute Tempo Change. 
+   Bank: 0-9 Sets a Base Multiplier value and  Program Change Adds to that Creating any required tempo.
+    for example Bank: 0  Program change: 110 := (0 x 100) + 110 = 110 BPM
+                Bank: 1  Program change: 28 := (1 x 100)  + 28  = 128 BPM
+                Bank: 7  Program change: 53 := (7 x 100)  + 53  = 753 BPM
+
+*** Force Control Surface Triggers (Some Triggers many not work properly based on what functions they are set to.)
+*** You must Replace /media/662522/Libs/tkgl_anyctrl_lt.so with the one included with this release.
+
+This Newer module adds midi filter capability for combo-shortcuts so they do not trigger unnecessary underlying Force Functions.
+
+*************** Example Surface Triggers. 
+SHIFT+UP : Shift + Up arrow
+SHIFT+DOWN: --
+SHIFT+LEFT: --
+SHIFT+RIGHT: --
+
+SHIFT+EDIT+XXX are Safety Shortcuts for commands like REBOOT and RESTART.
+
+SHIFT+EDIT+UP : Shift + Up arrow
+SHIFT+EDIT+DOWN: --
+SHIFT+EDIT+LEFT: --
+SHIFT+EDIT+RIGHT: --
+
+EDIT+XXX Hold Edit and Press
+##bottom most row
+                                            
+EDIT+QUANTIZE
+EDIT+LENGTH
+EDIT+DOUBLE
+EDIT+CLEAR+AUTOMATION
+EDIT+METRONOME
+EDIT+TC
+EDIT+OCT-
+EDIT+OCT+
+
+EDIT+LEFT
+EDIT+RIGHT
+EDIT+LEFT
+EDIT+RIGHT
+
+
+hold knob and press the arrow
+
+KNOBS+UP
+KNOBS+DOWN
+KNOBS+LEFT
+KNBOS+RIGHT
+
+Hold Launch for these.. 
+
+LAUNCH+UP
+LAUNCH+DOWN
+LAUNCH+LEFT
+LAUNCH+RIGHT
+
+SHIFT+SCENE-1
+SHIFT+SCENE-2
+SHIFT+SCENE-3
+SHIFT+SCENE-4
+SHIFT+SCENE-5
+SHIFT+SCENE-6
+SHIFT+SCENE-7
+SHIFT+SCENE-8
+
+****** other triggers not mentioned here are listed in config files.
+
+
+###################################################################
+         Available Functions:
+###################################################################
+Functions are actions that happen when a corresponding trigger is received.
+for Example CC_33= PLAY will generate the PLAY Button Press on FORCE.
+You can also chain multiple functions together bound to a single trigger, thus creating a  MACRO.
+
+**** Note: Certain Functions (VALUE--1x, TEMPO++1x) can have x1,x2  in the end. this means that this function
+                                     will trigger x times.
+
+******* TRANSPORT FUNCTIONS ***********
+
+PLAY : Start Playback
+STOP : Stop Playback
+STOP-REWIND : Stops Playback and Return to Start (Arranger)
+DOUBLE-STOP : Stops Playback and Kills any Audio. 
+RECORD: Triggers Record Button Press
+RECORD-ARRANGER: Triggers Record Button Press for Arranger (Shift + Record)
+CONTINUE :  Starts Playback from Current Cursor Position (Arranger)
+VALUE++x1  : Triggers Press of + button (will increment the any selected field) last number is number of times to run this; VALUE++10 will press+ button 10 times.
+VALUE--x1  : Triggers Press of - button (will decrement the any selected field)
+
+******* CLIP / SLOT SELECT FUNCTIONS ***********
+These Function select Clip/slot based on Currently Selected Clip.
+Please note midiloop monitors its on clip number and if you select a clip on force, it has no means on know what clip it current.
+So usually its advisable to run SELECT-CLIP-1, to select the First Pad  and then use other functions to move around.
+
+
+SELECT-CLIP-LEFT
+SELECT-CLIP-RIGHT
+SELECT-CLIP-UP
+SELECT-CLIP-DOWN
+SELECT-CLIP-1 : Set Internal Selection to Clip 1: Useful for Resetting Position for Relative Addressing. 
+TRIGGER-CLIP-SLOT Triggers the currently Selected Clip slot
+SELECT-TRACK-PREVIOUS
+SELECT-TRACK-NEXT
+
+******* CLIP / SLOT Trigger/Launch FUNCTIONS ***********
+ 
+TRIGGER-CLIP-SLOT-LEFT
+TRIGGER-CLIP-SLOT-RIGHT
+TRIGGER-CLIP-SLOT-UP
+TRIGGER-CLIP-SLOT-DOWN
+
+******** SCENE / ROW ********************* 
+The Scene changed on Force Hardware are tracked inside the program so you can use this pretty much flawlessly.
+LAUNCH-SCENE-PREVIOUS
+LAUNCH-SCENE-NEXT
+LAUNCh-SCENE-1  # Triggers Press of First Launch Button
+LAUNCH-SCENE-2
+LAUNCH-SCENE-3
+LAUNCH-SCENE-4
+LAUNCH-SCENE-5
+LAUNCH-SCENE-6
+LAUNCH-SCENE-7
+LAUNCH-SCENE-8
+
+******* OTHER NORMAL FUNCTIONS ***********
+
+DELETE-CURRENT-SELECTED-CLIP : use with caution
+
+TOGGLE-ARP
+TOGGLE-METRONOME
+TOGGLE-TC
+TOGGLE-FIXED-LEN-RECORD
+DOUBLE-CLIP-LEN
+SHOW-EDITOR
+SHOW-CLIP : Clip or arrange depending on what view you were in previously.
+SHOW-MIXER
+SHOW-MATRIX
+UNDO : Useful when doing loop recording takes from foot controller.
+REDO 
+STOP-ALL-CLIPS
+
+*************** MATRIX / PROJECT NAVIGATION ***************************
+
+ARROW-UP
+ARROW-DOWN
+ARROW-LEFT
+ARROW-RIGHT
+
+********* Special Page Selection Functions ************
+you will use these in macros such as, and in your clip on automation track, you could program that note for a follow action.
+
+%% NOTE: You Project must have AT-LEAST x number of pages (with scenes or tracks) to these to work properly.
+for Example for commands like: PAGE-7 your project must have 7x8 = 56 scenes or for,
+                              TRACKS-PAGE-7 you project must have 7x8 =56 tracks.
+
+NOTE_44 = PAGE-2 LAUNCH-SCENE-1
+
+PAGE-1 Navigates to first 8 scenes
+PAGE-2 Navigates to Next 8 Scenes
+PAGE-3
+PAGE-4
+PAGE-5
+PAGE-6
+PAGE-7
+PAGE-8
+TRACKS-PAGE-1 #navigates to first 8 tracks
+TRACKS-PAGE-2 #navigates to next 8 tracks (9-16)
+TRACKS-PAGE-3
+TRACKS-PAGE-4
+TRACKS-PAGE-5
+TRACKS-PAGE-6
+TRACKS-PAGE-7
+TRACKS-PAGE-8
+
+
+
+#----------------- RESERVED MAPPINGS ------------------------------------
+
+The Following Shortcut  Mappings are Permanently applied and cannot be changed.
+EDIT+MUTE : PAD MUTE for Kits/Keygroups..
+STEP-SEQ+EDIT : Show Step SEQ 
+NOTE+EDIT : Launch KeyRange (Filter) Screen.
+
+
+#################### AVAILABLE TOUCH BASED FUNCTIONS ###################
+
+These Functions launch the Required Sub Screen and Send Touch to the co-ordinates (as if user touched the screen)
+Expect some latency. As there will be delay before the window is ready. This can be used to Program custom Macros..
+the Akai Force Screen is: 1280x720 and you must specify values between these to send touch.
+if you use the screenshot feature, the resulting image is 1280x800, so you need to first resize (disregarding aspect ratio)
+in a computer program like photoshop or photopea (https://www.photopea.com/) to resize and use info window to see co-ordinates of various elements.
+
+The Touch Commands Syntax: Touch Commands Use a very Specific Syntax where you can tell it what window/view to open and give it where X,Y values for location to touch at.
+the Format of Command is:
+
+ TOUCH~PAGE-NAME~Identifier~XxY (X,and Y Position to Generate Touch at).
+
+Where PAGE-NAME can be any valid Force showing Function , Such as MENU,SAMPLER,LOOPER.
+for EXAMPLE: 
+
+TOUCH~SAMPLER~AUTOSAMPLER~1110x440
+translates to show SAMPLER (SAMPLER) and touch at 1110x440 which happens to be AutoSampler button.
+
+
+##### The Menu Page #########
+The Menu is divided in 5x5 buttons that can be rearranged, hence generic Names
+
+example: EDIT+UP = TOUCH~MENU~TUNER~910x56 #Launch MENU SCREEN and Touch at 910-56 which is tuner.
+ 
+        CC_77 = TOUCH~LOOPER~RECORD~1180x600 Open Looper and do a touch at 1180,600 position (record button);)
+The Following Commands have been predefined, but you are encouraged to create your own using different macro functions.
+
+Such As: CC_77 = TOUCH~SHOW-EDITOR~FOCUS-PRESET~775x20 VALUE--x1
+On receiving a value of 127 on CC_77, it will load Editor of the Plugin Track and Tough the Preset Box and then Press - Button on Force,
+which is equivalent : previous preset , sending VALUE++x1 in Similar command will load Next Preset.
+This is good if you are sitting at a master keyboard and want to go through some presets remotely. 
+
+SHIFT++ :only use before a touch operation when shift button press is required for on screen
+
+Below are SOme Pre-defined Touch Commands you can assign to Midi Note, CC or Surface Trigger.
+
+TOUCH~MENU~TUNER~910x56  #'show tuner pop up'
+
+TOUCH~MENU~MENU-1~110x150 Touch First Item on Menu Page: The First Item in Side Bar
+TOUCH~MENU~MENU-2~370x150
+TOUCH~MENU~MENU-3~630x150
+TOUCH~MENU~MENU-4~910x150
+TOUCH~MENU~MENU-5~1160x150
+
+TOUCH~MENU~MENU-6~110x270 #second row
+TOUCH~MENU~MENU-7~370x270
+TOUCH~MENU~MENU-8~630x270
+TOUCH~MENU~MENU-9~910x270
+TOUCH~MENU~MENU-10~1160x270
+
+TOUCH~MENU~MENU-11~110x400 #third row on menu page
+TOUCH~MENU~MENU-12~370x400
+TOUCH~MENU~MENU-13~630x400
+TOUCH~MENU~MENU-14~910x400
+TOUCH~MENU~MENU-15~1160x400
+
+TOUCH~MENU~MENU-16~110x520
+TOUCH~MENU~MENU-17~370x520
+TOUCH~MENU~MENU-18~630x520
+TOUCH~MENU~MENU-19~~910x520
+TOUCH~MENU~MENU-20~1160x520
+
+TOUCH~MENU~MENU-21~110x640
+TOUCH~MENU~MENU-22~370x640
+TOUCH~MENU~MENU-23~630x640
+TOUCH~MENU~MENU-24~910x640
+TOUCH~MENU~MENU-25~1160x640
+
+TOUCH~NONE~NONE~1280x0  # very useful to send a touch to what is currently on Screen at Provided Location.
+                        # 1280x0 is top most first pixel on screen. this location is good to get rid of certain pop-ups.
+
+
+#Sampler Page 
+
+TOUCH~SAMPLER~ARM~850x400 record/record arm
+TOUCH~SAMPLER~LENGTH~850x575 'select the length box' you can send VALUE++x1 and VALUE--x1 or you can directly create macro adding VALUE++x10 VALUE--x10 to your triggers,
+                            such as foot controller. so change the value by 10 clicks
+
+TOUCH~SAMPLER~AUTOSAMPLER~1110x440
+TOUCH~SAMPLER~INPUT~551x64 
+
+#Looper Functions.: A Good Candidate for FootControllers.
+TOUCH~LOOPER~CLEAR~350x690
+TOUCH~LOOPER~REVERSE~525x690
+TOUCH~LOOPER~REPLACE~690x690
+TOUCH~LOOPER~PLAY~990x690
+TOUCH~LOOPER~OVERDUB~1180x 690
+TOUCH~LOOPER~RECORD~1180x600
+TOUCH~LOOPER~BARS~551x64 
+TOUCH~LOOPER~INPUT~251x64 
+TOUCH~LOOPER~SYNC~1180x64 
+TOUCH~LOOPER~RECORD-PLAY~855x64
+TOUCH~LOOPER~RECORD-OVERDUB~975x64
+
+## to change looper bars directly from a controller you would need to map the macro to a note or cc for example
+CC_2 = TOUCH~LOOPER~BARS~551x64 VALUE--x1
+CC_3 = TOUCH~LOOPER~BARS~551x64 VALUE++x1
+
+TOUCH~SHOW-CLIP~CLIP-VIEW~210x40
+TOUCH~SHOW-CLIP~GRID-VIEW~130x40
+TOUCH~SHOW-CLIP~ARRANGE-VIEW~40x40
+
+TOUCH~SHOW-EDITOR~FOCUS-PRESET~775x20 #select the presets box
+  create macros such as
+  NOTE_0 = TOUCH~SHOW-EDITOR~FOCUS-PRESET~775x20 VALUE--x1
+  NOTE_1 = TOUCH~SHOW-EDITOR~FOCUS-PRESET~775x20 VALUE++x1
+  Use lowermost keys to switch next and previous shortcut for plugin track.
+  Hint: with key-range function, you can set key range limit on automation track to just lowest octave from your
+   Midi controller keyboard and ... you have it at your finger tips. 
+
+#######################################################################
+                HARDWARE RE-MAPPABLE BUTTONS
+#######################################################################
+Few Hardware buttons have been made re-mappable. i.e their actual function has been disabled.
+This allows you to assign another function to that button. The Original Function can be Mapped to any other shortcut too.
+
+HW-NAVIGATE: The navigate Button, Assign to NAVIGATE for Default functionality.
+HW-ASSIGN-A: Set to ASSIGN-A for Default functionality
+HW-ASSIGN-B: Set to ASSIGN-B for Default Functionality.
+
+HW-MINUS    = default: MINUS
+HW-PLUS     = default: PLUS
+HW-CLIP-STOP = default: CLIP-STOP
+HW-UP =  default: ARROW-UP
+HW-DOWN =  default: ARROW-DOWN
+HW-LEFT = default: ARROW-LEFT
+HW-RIGHT =  default:ARROW-RIGHT
+
+PAGE+UP,PAGE+DOWN,+PAGE+LEFT and PAGE+RIGHT functions are also avilable, that will trigger the Standard Shift+page function of changeing entire pages (8 rows or tracks)
+
+*************************************************************************
+                 SPECIAL MACROS AND FUNCTIONS
+**************************************************************************
+
+LAUNCH-RAND-ALL # launch a random scene from visible scenes  1-8
+LAUNCH-RAND-1-4 # launch a random scene from visible scenes 1-4
+LAUNCH-RAND-5-8 # launch a random scene from visible scenes 5-8
+
+HUMANIZE-CLIP : A Special Internal Macro that Opens Clip view, and then touches edit, button, then humanize followed by Apply.
+                You must set parameters for Humanization Beforehand.
+RANDOMIZE-CLIP : A Special Internal Macro that Opens Clip view, and then touches edit, button, then randomize followed by Apply.
+                You must set parameters for Randomization Beforehand. As Side Effect, will toggle legato on/off on an audio clip track.
+
+These may have some side-effects if run on an audio clip/audio track,
+HALF-CLIP-LEN : A Special Internal Macro to Do /2 function from Clip screen, used touch simulation..
+DOUBLE-SPEED  : Doubles the Speed of midi clip , use followed with HALF-CLIP-LEN to auto resize.
+HALF-SPEED     :Makes clip slower by Half, use along with DOUBLE-CLIP-LEN to auto resize.
+
+SCREENSHOT: Will take a screen capture and Store in /media/662522/Screenshots
+
+VIDEO-CAPTURE: Will Start Capturing Video (no audio). Pressing Again will Stop Capturing and save .mp4 file to :/media/662522/Screenshots
+               the Select Button light will blink while video is being recorded. Avoid Using any functions that use Select buttons while Video Capturing. 
+               The Converted Video is h264rgb format which is not suitable for web, so convert it into normal h264 or other format using any video converter
+               on your computer. Conversion on Force is extremely slow , puts extreme unnecessary load on it.
+AUDIO-VIDEO-CAPTURE: Audio Captures requires that you have another class compliant interface connected to Force and are using that as Main Interface.
+                   That Frees the Internal interface, thus anything plugged into the internal (audio or mic) can be recorded into a separate audio file.
+                   you can edit the avcapture script to change the format from aac to wav or flac as needed. Works same as Video Capture Above.
+AUDIO-CAPTURE:  Captures only Audio coming into Internal (when using external interface as primary) into flac files. Same Rules Apply as above.
+
+
+
+WAITxN : example WAITx10 o r WAITx100. when used in macros, will wait N milliseconds before executing next command.

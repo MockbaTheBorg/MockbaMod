@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MidiLearnMap_ Manufacturer="User">
+  <pairing>
+    <Target_ Target_control="0"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="0" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="1"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="1" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="2"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="2" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="3"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="3" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="4"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="4" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="5"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="5" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="6"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="6" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="7"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="7" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="8"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="8" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="9"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="9" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="10"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="10" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="11"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="11" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="12"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="12" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="13"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="13" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="14"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="14" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="15"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="15" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="16"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="16" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="17"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="17" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="18"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="18" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="19"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="19" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="20"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="20" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="21"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="21" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="22"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="22" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="23"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="23" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="24"/>
+    <Mapping_ Mapping_type="2" Mapping_channel="11" Mapping_data1="77" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="25"/>
+    <Mapping_ Mapping_type="2" Mapping_channel="11" Mapping_data1="78" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="26"/>
+    <Mapping_ Mapping_type="2" Mapping_channel="11" Mapping_data1="79" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="27"/>
+    <Mapping_ Mapping_type="2" Mapping_channel="11" Mapping_data1="80" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="28"/>
+    <Mapping_ Mapping_type="2" Mapping_channel="11" Mapping_data1="81" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="29"/>
+    <Mapping_ Mapping_type="2" Mapping_channel="11" Mapping_data1="82" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="30"/>
+    <Mapping_ Mapping_type="2" Mapping_channel="11" Mapping_data1="83" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="31"/>
+    <Mapping_ Mapping_type="2" Mapping_channel="11" Mapping_data1="84" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="32"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="32" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="33"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="33" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="34"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="34" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="35"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="35" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="36"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="36" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="37"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="37" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="38"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="38" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="39"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="39" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="40"/>
+    <Mapping_ Mapping_type="2" Mapping_channel="11" Mapping_data1="62" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="41"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="41" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="42"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="42" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="43"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="43" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="44"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="44" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="45"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="45" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="46"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="46" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="47"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="47" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="48"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="48" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="49"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="49" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="50"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="50" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="51"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="51" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="52"/>
+    <Mapping_ Mapping_type="2" Mapping_channel="11" Mapping_data1="52" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="53"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="53" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="54"/>
+    <Mapping_ Mapping_type="2" Mapping_channel="11" Mapping_data1="45" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="55"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="55" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="56"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="56" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="57"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="57" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="58"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="58" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="59"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="59" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="60"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="60" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="61"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="61" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="62"/>
+    <Mapping_ Mapping_type="2" Mapping_channel="11" Mapping_data1="49" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="63"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="63" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="64"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="64" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="65"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="65" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="66"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="66" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="67"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="67" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="68"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="68" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="69"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="69" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="70"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="70" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="71"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="71" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="72"/>
+    <Mapping_ Mapping_type="2" Mapping_channel="11" Mapping_data1="37" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="73"/>
+    <Mapping_ Mapping_type="2" Mapping_channel="11" Mapping_data1="38" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="74"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="74" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="75"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="75" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="76"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="76" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="77"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="77" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="78"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="78" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="79"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="79" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="80"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="80" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="81"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="81" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="82"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="82" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="83"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="83" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="84"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="84" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="85"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="85" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="86"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="86" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="87"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="87" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="88"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="88" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="89"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="89" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="90"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="90" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="91"/>
+    <Mapping_ Mapping_type="2" Mapping_channel="11" Mapping_data1="31" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="92"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="92" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="93"/>
+    <Mapping_ Mapping_type="2" Mapping_channel="11" Mapping_data1="21" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="94"/>
+    <Mapping_ Mapping_type="2" Mapping_channel="11" Mapping_data1="23" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="95"/>
+    <Mapping_ Mapping_type="2" Mapping_channel="11" Mapping_data1="22" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="96"/>
+    <Mapping_ Mapping_type="2" Mapping_channel="11" Mapping_data1="24" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="97"/>
+    <Mapping_ Mapping_type="2" Mapping_channel="11" Mapping_data1="26" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="98"/>
+    <Mapping_ Mapping_type="2" Mapping_channel="11" Mapping_data1="25" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="99"/>
+    <Mapping_ Mapping_type="2" Mapping_channel="11" Mapping_data1="35" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="100"/>
+    <Mapping_ Mapping_type="2" Mapping_channel="11" Mapping_data1="34" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="101"/>
+    <Mapping_ Mapping_type="2" Mapping_channel="11" Mapping_data1="32" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="102"/>
+    <Mapping_ Mapping_type="2" Mapping_channel="11" Mapping_data1="33" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="103"/>
+    <Mapping_ Mapping_type="2" Mapping_channel="11" Mapping_data1="36" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="104"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="104" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="105"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="105" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="106"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="106" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="107"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="107" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="108"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="108" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="109"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="109" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="110"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="110" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="111"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="111" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="112"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="112" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="113"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="113" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="114"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="114" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="115"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="115" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="116"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="116" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="117"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="117" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+  <pairing>
+    <Target_ Target_control="118"/>
+    <Mapping_ Mapping_type="9" Mapping_channel="11" Mapping_data1="118" Mapping_control="5"
+              Mapping_reverse="0"/>
+  </pairing>
+</MidiLearnMap_>
