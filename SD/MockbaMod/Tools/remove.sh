@@ -40,7 +40,7 @@ sleep .5
 set_pad 05 20 00 00
 set_pad 06 05 00 00
 if [ -f boot_old.sh ]; then
-	mv -f boot.sh remove.sh   # remove the existing boot.sh
+	rm -f boot.sh             # remove the existing boot.sh
 	mv -f boot_old.sh boot.sh # rename boot_old.sh to boot.sh
 fi
 set_pad 06 20 00 00
