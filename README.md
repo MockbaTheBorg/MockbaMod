@@ -13,5 +13,4 @@ With the information contained here people should be able to install/uninstall M
 
 ### Latest Version
 MockbaMod: 3.2.4.19 - https://mega.nz/file/ofY2ga4I#-SkuUFuAl6rWif8kQ6XXua3SM_0D4KEwblXMmojCArg <br>
-SD Card: 4.03 - https://mega.nz/file/pGBgDKyR#jQqBw4Zcz2TaDD6t1NCgf2MgpJXqpw-cJrg5wJ9emeU <br>
-SD Card: 4.02 - https://mega.nz/file/kKYnCBTA#EXsU47d70tbXj7EjOBH_xsJHhU3KEVKYEcyCQC2tf6E
+SD Card: 4.03 - https://mega.nz/file/9LB1mTLR#9s9QSOal2PsHPKnKe2YE2LKxfJLFrcZkhBRmFKP1IhQ
