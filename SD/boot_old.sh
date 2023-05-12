@@ -89,6 +89,10 @@ else
 	set_pad 07 00 20 20
 fi
 
+echo "Check/run runalways" >> $mmLogs/boot.log
+f=$mmPath/runalways.sh
+[ -f "$f" ] && "$f"
+
 # Kills AddOns if still running
 echo "Killing AddOns" >> $mmLogs/boot.log
 if test -d $mmPath/AddOns; then
