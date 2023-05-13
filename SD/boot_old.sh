@@ -12,12 +12,14 @@ mmPath=`cat /dev/shm/.mmPath`
 
 clear_pads
 
-echo "------------------------------" > $mmLogs/boot.log
-date >> $mmLogs/boot.log
 
 if test -f /tmp/mod_started; then
+	echo "------------------------------" >> $mmLogs/boot.log
+	date >> $mmLogs/boot.log
 	echo "Mod was already started" >> $mmLogs/boot.log
 else
+	echo "------------------------------" > $mmLogs/boot.log
+	date >> $mmLogs/boot.log
 	echo "MockbaMod SD Card is mounted on "$mmMount
 	echo "Booting up the mod" >> $mmLogs/boot.log
 
