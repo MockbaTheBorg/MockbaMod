@@ -2,6 +2,10 @@
 
 # Part of Mockba Mod, do not modify
 
+# Set the motherboard LEDs to show disk activity instead of heartbeat
+echo mmc0 > /sys/class/leds/az01\:red\:usr1/trigger
+echo mmc1 > /sys/class/leds/az01\:red\:usr2/trigger
+
 # Set the initial execution path
 cd "$(dirname "$0")"
 echo $(pwd) > /dev/shm/.mmPath
