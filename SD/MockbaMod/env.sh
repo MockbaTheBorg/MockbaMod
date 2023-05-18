@@ -6,7 +6,7 @@ fi
 
 # set up environment variables
 
-MPC_PID=$(pidof MPC)
+MPC_PID=$(ps | grep "MPC Main Thread" | xargs | cut -d' ' -f1)
 
 mm=$mmPath/MockbaMod
 mmLogs=$mm/Logs
