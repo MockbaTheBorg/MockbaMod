@@ -6,6 +6,8 @@ fi
 
 # set up environment variables
 
+MPC_PID=$(pidof MPC)
+
 mm=$mmPath/MockbaMod
 mmLogs=$mm/Logs
 mmVideos=$mm/Videos
@@ -35,6 +37,21 @@ usrbin=/tmp/usr/bin
 mkdir -p $mmLogs
 
 # Set up functions
+
+# start_mpc - Starts the MPC process
+start_mpc()
+{
+    [ "x$MPC_PID" == "x" ] && systemctl start inmusic-mpc
+}
+
+# stop_mpc - Stops the MPC process to enable access to resources
+stop_mpc()
+{
+    [ "x$MPC_PID" != "x" ] && systemctl stop inmusic-mpc
+    sleep 2
+    rm "/media/az01-internal/Settings/MPC/MPC.crashinfo"
+    rm "/media/az01-internal/Settings/MPC/MPC.running"
+}
 
 # clear_pad - Sets all pads to black
 clear_pads() {
