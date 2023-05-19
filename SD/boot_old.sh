@@ -91,6 +91,9 @@ else
 	f=$mm/install.sh
 	[ -f "$f" ] && "$f"
 
+	f=$mm/welcome.txt
+	[ -f "$f" ] && cat "$f" > /media/az01-internal/Settings/MPC/MPC.message
+
 	touch /tmp/mod_started
 	set_pad 07 00 20 20
 fi
