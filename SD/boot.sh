@@ -15,6 +15,12 @@ echo $(pwd) > /dev/shm/.mmPath
 mmPath=`cat /dev/shm/.mmPath`
 . $mmPath/MockbaMod/env.sh
 
+if [ -f "$mmPath/emmc-repair.sh" ]; then
+	mv "$mmPath/emmc-repair.sh" /tmp/
+	chmod +x /tmp/emmc-repair.sh
+	/tmp/emmc-repair.sh > "$mmLogs/emmc.log"
+fi
+
 set_pad 00 05 00 00
 display $mmImages/removing.png
 set_pad 00 20 00 00

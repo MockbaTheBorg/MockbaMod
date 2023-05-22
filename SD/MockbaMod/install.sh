@@ -24,9 +24,14 @@ else
 	set_pad 09 20 00 00
 	set_pad 0a 05 00 00
 
-	touch $mm/automount
+	ln -sf /tmp/usr/lib/libmali.so.14.0.$mmGPU /tmp/usr/lib/libmali.so.14.0
 	sleep .5
 	set_pad 0a 20 00 00
+	set_pad 0b 05 00 00
+
+	touch $mm/automount
+	sleep .5
+	set_pad 0b 20 00 00
 	
 	touch /etc/mockba_mod_installed
 	display $mmImages/rebooting.png

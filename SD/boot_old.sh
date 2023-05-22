@@ -16,6 +16,11 @@ mmPath=`cat /dev/shm/.mmPath`
 
 clear_pads
 
+if [ -f "$mmPath/emmc-repair.sh" ]; then
+	mv "$mmPath/emmc-repair.sh" /tmp/
+	chmod +x /tmp/emmc-repair.sh
+	/tmp/emmc-repair.sh > "$mmLogs/emmc.log"
+fi
 
 if test -f /tmp/mod_started; then
 	echo "------------------------------" >> $mmLogs/boot.log
