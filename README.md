@@ -1,19 +1,20 @@
 # MockbaMod
-### Akai Force Modded Firmware
+
+### Modded Firmware for the Akai Force
 This repository contains information about MockbaMod and the basic contents of a SD card.<br>
 With the information contained here people should be able to install/uninstall MockbaMod and create their own customized SD card.<br>
 <hr>
 
-### Folders
-* Documentation - All the document files go here
-* SD - This is a SD card skeleton template
-* AddOns - All the MockbaMod add-ons
-* Apps - Apps which can be called from the load menu
+### Repository Folders
+* **Documentation** - All the document files go here.
+* **SD** - This is a SD card skeleton template for those willing to build a custom one.
+* **AddOns** - All the MockbaMod add-ons available are listed in the .psv file stored here.
+* **Apps** - Apps which can be called from the load menu.
 <hr>
 
 ### Latest Version
-MockbaMod: 3.2.5.1 - https://mega.nz/file/cfAnUIjK#NaJBnRQxlm4sS3Io5_A2atHvrP_Abir19mLXoInpSo0 <br>
-SD Card: 4.07 - https://mega.nz/file/lK5nkCrK#Dk0HxCNCEzqKu8_XhnDMJi_THgDMCikdhNsQQbDo1ws <br>
+**MockbaMod**: 3.2.5.1 - https://mega.nz/file/cfAnUIjK#NaJBnRQxlm4sS3Io5_A2atHvrP_Abir19mLXoInpSo0 <br>
+**SD Card**: 4.07 - https://mega.nz/file/lK5nkCrK#Dk0HxCNCEzqKu8_XhnDMJi_THgDMCikdhNsQQbDo1ws <br>
 
 Discord: https://discord.gg/HvNBpArSSa
 <hr>
@@ -29,3 +30,28 @@ When booting the Force with the SD card inserted, MockbaMod will load the modifi
 When installing this latest v4 over previous versions of MockbaMod, it will remove the previous version to avoid conflicts. This is normal and should occur only the first time an SD card is created/used.
 
 IMPORTANT: MockbaMod consists of two parts: the modded firmware and the SD card contents. There may be updated SD card contents without a new Akai firmware release, and vice versa. It is not mandatory to reinstall the firmware image when a new SD card image is available, nor the SD image when a new firmware is released.
+<hr>
+
+### Features
+
+MockbaMod implements the following (always evolving) list of features:
+
+* **Scene automation (follow actions)** - Allows the implementation of an automation track which launches scenes automatically, so the Force can be used as a hands-off accompaniment device.
+* **Foot controller support** - The Automation feature also allows external midi controllers to automatically trigger buttons in the padboard. Perfect for guitarists.
+* **Hidden screen access** - Allows access to some screens of the MPC KEY 61 which are hidden in the Force firmeware. Added functionality.
+* **Multi boot** - Allows the selection of older (to some extent) formware upon starting a project. This helps test things in older versions of the firmware without reflashing the unit.
+* **SSH/SFTP Access** - This adds remote filesystem access to the Force, which is great for copying files to and from the unit without having to move USB devices or SD cards back and forth.
+* **Custom Arpeggios** - Filesystem access allows modification/addition of arpeggio files.
+* **AddOn manager** - Allows managing addons installed on the device.
+* **Multiple AddOns** - MockbaMod supports multiple addons, listed below:
+
+  - **PushLua** - Implements native support to the Push 1 as an additional padboard for the Force for playing notes, drums, etc. with no computer needed.
+  - **DropSeq** - Implements a Special Drop,Weight based 4 Track Midi Sequencer.
+  - **Euclidier** - Implements a headless 8 Track Euclidean sequencer for Akai Force.
+  - **SoX** - SoX (Sound eXchange) is the Swiss Army knife of sound processing tools.
+  - **dxSEX** - CC to Sysex Converter for DX7, VolcaFM, Dexed for Akai Force.
+  - **NodeServer** - Implements a Web Application Server for Akai Force Hosting many Apps.
+  - **CustomBufferSize** - ALSA Api Middleware To Allow Custom Period/Buffer Sizes.
+  - **emmcRepair** - A Tool to Repair corruption of internal emmc that does happen from time to time.
+  - **VNCServer** - Stream Force Screen to your Desktop/Phone Vnc Client (touch/mouse supported).
+  - **MidiLoop** - Implements the automation functionality plus command macros, key combos, screenshots, video capture. (Installed by default)
