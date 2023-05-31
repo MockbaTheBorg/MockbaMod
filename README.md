@@ -54,4 +54,4 @@ MockbaMod implements the following (always evolving) list of features:
   - **CustomBufferSize** - ALSA Api Middleware To Allow Custom Period/Buffer Sizes.
   - **emmcRepair** - A Tool to Repair corruption of internal emmc that does happen from time to time.
   - **VNCServer** - Stream Force Screen to your Desktop/Phone Vnc Client (touch/mouse supported).
-  - **MidiLoop** - Implements the automation functionality plus command macros, key combos, screenshots, video capture. (Installed by default)
+  - **MidiLoop** - Implements the automation functionality plus command macros, key combos, screenshots, video capture, midi interface blocklist. (MidiLoop is always installed by default)
