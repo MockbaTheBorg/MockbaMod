@@ -14,6 +14,7 @@ else
 	display $mmImages/installing.png
 	sleep .5
 	cp -a $mmFiles/shadow /media/az01-internal/system/etc/overlay/
+	cp -a $mmFiles/profile /media/az01-internal/system/etc/overlay/
 	sleep .5
 	set_pad 08 20 00 00
 	set_pad 09 05 00 00
