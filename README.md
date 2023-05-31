@@ -14,7 +14,7 @@ With the information contained here people should be able to install/uninstall M
 
 ### Latest Version
 **MockbaMod**: 3.2.5.1 - https://mega.nz/file/cfAnUIjK#NaJBnRQxlm4sS3Io5_A2atHvrP_Abir19mLXoInpSo0 <br>
-**SD Card**: 4.08 - https://mega.nz/file/oLpgFICY!9Ot00u8ZMWLnUfUYXbBxoOLkCbN8NIxtIIga9qRzODg <br>
+**SD Card**: 4.08 - https://mega.nz/file/VfAxwLJJ#9Ot00u8ZMWLnUfUYXbBxoOLkCbN8NIxtIIga9qRzODg <br>
 
 Discord: https://discord.gg/HvNBpArSSa
 <hr>
@@ -54,4 +54,4 @@ MockbaMod implements the following (always evolving) list of features:
   - **CustomBufferSize** - ALSA Api Middleware To Allow Custom Period/Buffer Sizes.
   - **emmcRepair** - A Tool to Repair corruption of internal emmc that does happen from time to time.
   - **VNCServer** - Stream Force Screen to your Desktop/Phone Vnc Client (touch/mouse supported).
-  - **MidiLoop** - Implements the automation functionality plus command macros, key combos, screenshots, video capture. (Installed by default)
+  - **MidiLoop** - Implements the automation functionality plus command macros, key combos, screenshots, video capture, midi interface blocklist. (MidiLoop is always installed by default)
