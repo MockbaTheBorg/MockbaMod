@@ -18,7 +18,7 @@ mmLua=$mm/Lua
 mmLibs=$mm/Libs
 mmDev=`amidi -l | grep Private | cut -b5-13`
 mmGPU=`cat /sys/devices/platform/ffa30000.gpu/gpuinfo | cut -d' ' -f4`
-mmMount=`mount | grep 662522 | cut -d' ' -f1`
+mmMount=`mount | grep on./media/662522 | cut -d' ' -f1`
 
 #set LDPRELAOD and ANYCTL Var File:
 mmLD_PRELOAD_VAR="/dev/shm/.LD_PRELOAD"
