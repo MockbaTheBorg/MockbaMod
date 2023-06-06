@@ -11,13 +11,6 @@ $$$ IF YOU CAN'T READ/FOLLOW INSTRUCTIONS, You should not be using Mods. Period!
 
 #####################################################################
 
-**** Installation:**************************************
-
-1: Copy Files in Tools to your Mockba SD-CARD/Tools
-2: Copy Files in Libs to your Mockba SD-CARD/Libs
-3: Optional Copy the Included x xpm (Midi Mapping) File to SD card.
-4: Recommended: Backup your mockba sd card before proceeding.
-
 **** Configuration: *********************************************
 
 1: Go to Midi Preferences on Force and
