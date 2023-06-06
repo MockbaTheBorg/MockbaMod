@@ -21,7 +21,7 @@ $$$ IF YOU CAN'T READ/FOLLOW INSTRUCTIONS, You should not be using Mods. Period!
 
 3: For Follow Actions / Automation, Create a Midi Track and route its output to Mockba Automation In.
 
-4: Load the Included Xpm (Midi Mapping Template) into this track.
+4: Load the Included Xpm (Midi Mapping Template) into this track (optional and obsolete).
 
 *** Note: For Lot Of Special Internal Functions (some factory files need to be removed from firmware)
          (do not worry, mockba Mod already uses overlay for these locations, so nothing is deleted.
