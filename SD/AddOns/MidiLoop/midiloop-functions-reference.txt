@@ -27,11 +27,11 @@ $$$ IF YOU CAN'T READ/FOLLOW INSTRUCTIONS, You should not be using Mods. Period!
          (do not worry, mockba Mod already uses overlay for these locations, so nothing is deleted.
         On Launch of MidiLoop, those unneeded files are automatically renamed and a custom midi 
         function mapping file is copied to /usr/share/Akai/SME0/Midi Learn). If you ever want to get back the original Files.
-        You can Run the included midiloop_script.sh script with 10 as ID parameter ex.from shell . 
+        You can Run the included midiloop_script.sh script with RESTORE as ID parameter ex.from shell . 
     
             /media/662522/Tools/midiloop_script.sh RESTORE
 
-        The midiloop_script.sh file has 8 custom User script functions that you can add your own shell scripts or code.
+        The midiloop_script.sh file has 8 custom User script functions (can have manu more) that you can add your own shell scripts or code.
 
 
 ##### QUICK LIST OF SOME FEATURES #######################
@@ -50,7 +50,7 @@ $$$ IF YOU CAN'T READ/FOLLOW INSTRUCTIONS, You should not be using Mods. Period!
 	You can either program your midi controller to send already Mapped CC messages , or you can edit the Config files to Create a Mapping of your midi Controller.
 
 	If you have connected your Midi Controller Via Usb, you
-	can provide its name in the Config File and It will be automatically connected. and ready.
+	can provide its name in the Config File and It will be automatically connected. and ready,no need to create automation track in Force.
 
 6: If and when you make changes to Config (Recommended to tailor it to your needs), 
     you can run the following command from shell to check if file is ok.
@@ -58,12 +58,13 @@ $$$ IF YOU CAN'T READ/FOLLOW INSTRUCTIONS, You should not be using Mods. Period!
 	 /media/662522/Tools/midiloop test 2>/dev/null
 
 7: Video Capture/ScreenShot Capture.:
-        when you start VIDEO-CAPTURE via a Shortcut, the SELECT button Force will start blinking.
+        when you start VIDEO-CAPTURE via a Shortcut, the SELECT button Force will start blinking (default disabled).
         to STOP video Capture use the same shortcut again. timestamped Video will be saved to: /media/662511/Screenshots
  
 8: ON/OFF Support: run the script: 
         /media/662522/Tools/midiloop_script.sh ON
         /media/662522/Tools/midiloop_script.sh OFF
+	you can also your addon-manager to disable midi loop
 
 9: Multiple config Support. You can create multiple config files and store them into /media/662522/Tools/configs
         use the following command to list available configs:
@@ -71,6 +72,7 @@ $$$ IF YOU CAN'T READ/FOLLOW INSTRUCTIONS, You should not be using Mods. Period!
 
         use the following command to load a config named: basic
          /media/662522/Tools/midiloop_script.sh CONFIG basic
+
 10: Hardware button remap: Certain Hardware buttons (shortcuts) on Force Control surface can be set to  a different function than
     the factory defaults;
     arrow keys, shift+arrow keys, navigate, assign a-b, +/- tap-tempo,clip-stop (all can be reassigned). 
@@ -81,7 +83,7 @@ $$$ IF YOU CAN'T READ/FOLLOW INSTRUCTIONS, You should not be using Mods. Period!
    Please note: there Is a problem with midi note off messages at times causing hung notes (AKAI is aware of this bug, so expect a fix from them.)
 
 ********************************************************************
-IMPORTANT: WHen using any combo shortcuts like SHIFT+ARROW-UP, SHIFT+LAUNCH-1, the modifier (SHIFT) must be released and pressed again for another shortcut.
+IMPORTANT: When using any combo shortcuts like SHIFT+ARROW-UP, SHIFT+LAUNCH-1, the modifier (SHIFT) must be released and pressed again for another shortcut.
 you CANNOT simply hold a modifier and expect the shortcuts to work. This is by design to prevent shortcut lockups. 
 ********************************************************************
 
@@ -89,7 +91,7 @@ you CANNOT simply hold a modifier and expect the shortcuts to work. This is by d
 
 This Module also creates a virtual user space input device (to send qwerty commands to kernel)
 
-We now also can generate  generates touch events. so we can now trigger screen events and combos Like Menu Page and Touch on third item.
+We now also can generate touch events. so we can now trigger screen events and combos Like Menu Page and Touch on third item.
 Or go to sample page and touch on auto sampler button pop up autosampler from a shortcut , or record arm it.
 The best use case for this is the looper. you can map touch events to a midi foot controller (not just touch events) and control most functions of that.
 
@@ -110,7 +112,7 @@ TRIGGER-THRESHOLD: The CC value or Note Velocity that will Trigger the Command. 
 USE-ABSOLUTE-TRIGGER: 0 or 1: if 1 Only values equal to TRIGGER-THRESHOLD will be Valid. If 0 any Value equal or above Threshold will be considered valid. Use Values lower than 127 with caution.
 
 MIDI-HW-PORT-NAME : If Provided the Midi input port name will be directly opened behind the scenes for
-                  midi input. For Example a hardware controller. So you do not have to/need  create a separate automation track.
+                  midi input. For Example a hardware controller. So you do not have to/need to create a separate automation track.
                   Midi Port names can be found using the following shell command on Force:
                    aconnect -i
                     (used sub port full name , (like 0,1 etc and not the client xxx))
@@ -121,13 +123,14 @@ TOUCH-DELAY : Time to Wait after a touch , before next command (as in a macro) u
 
 POPUP-WAIT-TIME = 50 # (this is relative tempo latency) in ms (min: 5) to wait after a touch for pop up window to appear.
 
-USE-ALT-REL-TEMPO-METHOD # 1 or 0, Relative Tempo Automation has been programmed in two different ways, use whichever works best. for Tempo++x1 Tempo--x1 messages..
-USE-ALT-ABS-TEMPO-METHOD : absolute tempo changes have been programmed using two different strategies. When not using alt method sometimg triggered tempo is 1 or 2 bpm lower (this is something do do with force ignoring some messages,) hence the alternate method what will type inn the desired tempo. very accurate but has latency.
+USE-ALT-REL-TEMPO-METHOD # 1 or 0, Relative Tempo Automation has been programmed in two different ways, use whichever works best. for Tempo++x1 Tempo--x1, Tempo++x10,Tempo++x5 messages..
+
+USE-ALT-ABS-TEMPO-METHOD : absolute tempo changes have been programmed using two different strategies. When not using alt method sometimes triggered tempo is 1 or 2 bpm lower (this is something do do with force ignoring some messages,) hence the alternate method what will type in the desired tempo. very accurate but has significant latency.
 
 TEMPO-WINDOW-TIMEOUT # default: 1200 is seems good overall, you can reduce this a bit if your projects don't use tempos below 60.. 
                      any tempo events received within this period will assume that tempo window is open and will only send value change triggers.
 
-SPECIAL-FUNCTIONS-ON : 0 or 1=enabled: will disable many of MPC-FUNCTIONS as well as many other commands like REBOOT , RESTART etc.
+SPECIAL-FUNCTIONS-ON : 0 or 1=enabled: will disable many of MPC-FUNCTIONS as well as many other commands.
 
 
 LOG-OUTPUT = 1  #or 0, will print out output messages to /tmp/midiloop.log
@@ -135,7 +138,7 @@ LOG-OUTPUT = 1  #or 0, will print out output messages to /tmp/midiloop.log
 
 
 NUM-PAGES  # Assume The project to have  NUM-PAGES x 8 Scenes. This Allows Jumping to Different Scene pages from a single command.
-             Basically the command sends NUM-PAGES X 8 up arrow 
+             Basically the command sends NUM-PAGES X 8 up arrow. It is upto you to create as many scene rows in your project.
 
 PAGING-DELAY=1 # ms the higher the number the longer it takes for Page changes, keep this number low 1-10ms
 
@@ -167,9 +170,9 @@ Avoid these CCs (0,1,9,10,11,64,121 and above..)
                           AVAILABLE TRIGGERS
 ##########################################################################
 
-Triggers are events that cause an action pr actions in our case,
-for example CC_20 is CC Number 20, NOTE_36 = Midi Note#: 30.
-There are Also special Shortcut triggers added,  to use Unused (non factory) Force Button Combinations as Triggers.
+Triggers are events that cause an action or actions in our case,
+for example CC_20 is CC Number 20, NOTE_36 = Midi Note#: 36.
+There are Also special Shortcut triggers added, to use Unused (non factory) Force Button Combinations as Triggers.
 
 *** Midi Triggers(via Direct midi hardware or Sent to "Mockba Automation In" midi port on Aka Force )
 
@@ -183,11 +186,9 @@ There are Also special Shortcut triggers added,  to use Unused (non factory) For
                 Bank: 7  Program change: 53 := (7 x 100)  + 53  = 753 BPM
 
 *** Force Control Surface Triggers (Some Triggers many not work properly based on what functions they are set to.)
-*** You must Replace /media/662522/Libs/tkgl_anyctrl_lt.so with the one included with this release.
-
-This Newer module adds midi filter capability for combo-shortcuts so they do not trigger unnecessary underlying Force Functions.
 
 *************** Example Surface Triggers. 
+
 SHIFT+UP : Shift + Up arrow
 SHIFT+DOWN: --
 SHIFT+LEFT: --
@@ -263,13 +264,13 @@ DOUBLE-STOP : Stops Playback and Kills any Audio.
 RECORD: Triggers Record Button Press
 RECORD-ARRANGER: Triggers Record Button Press for Arranger (Shift + Record)
 CONTINUE :  Starts Playback from Current Cursor Position (Arranger)
-VALUE++x1  : Triggers Press of + button (will increment the any selected field) last number is number of times to run this; VALUE++10 will press+ button 10 times.
+VALUE++x1  : Triggers Press of + button (will increment the any selected field) last number is number of times to run this; VALUE++x10 will press + button 10 times.
 VALUE--x1  : Triggers Press of - button (will decrement the any selected field)
 
 ******* CLIP / SLOT SELECT FUNCTIONS ***********
 These Function select Clip/slot based on Currently Selected Clip.
-Please note midiloop monitors its on clip number and if you select a clip on force, it has no means on know what clip it current.
-So usually its advisable to run SELECT-CLIP-1, to select the First Pad  and then use other functions to move around.
+Please note midiloop monitors it's on clip number and if you select a clip on force, it has no means on know what clip is current.
+So usually it is advisable to run SELECT-CLIP-1, to select the First Pad  and then use other functions to move around.
 
 
 SELECT-CLIP-LEFT
@@ -289,7 +290,7 @@ TRIGGER-CLIP-SLOT-UP
 TRIGGER-CLIP-SLOT-DOWN
 
 ******** SCENE / ROW ********************* 
-The Scene changed on Force Hardware are tracked inside the program so you can use this pretty much flawlessly.
+The Scene changed on Force Hardware are tracked inside the program so you can use this pretty much flawlessly and safely.
 LAUNCH-SCENE-PREVIOUS
 LAUNCH-SCENE-NEXT
 LAUNCh-SCENE-1  # Triggers Press of First Launch Button
@@ -332,7 +333,7 @@ you will use these in macros such as, and in your clip on automation track, you 
 for Example for commands like: PAGE-7 your project must have 7x8 = 56 scenes or for,
                               TRACKS-PAGE-7 you project must have 7x8 =56 tracks.
 
-NOTE_44 = PAGE-2 LAUNCH-SCENE-1
+			example NOTE_44 = PAGE-2 LAUNCH-SCENE-1
 
 PAGE-1 Navigates to first 8 scenes
 PAGE-2 Navigates to Next 8 Scenes
@@ -365,8 +366,9 @@ NOTE+EDIT : Launch KeyRange (Filter) Screen.
 
 These Functions launch the Required Sub Screen and Send Touch to the co-ordinates (as if user touched the screen)
 Expect some latency. As there will be delay before the window is ready. This can be used to Program custom Macros..
-the Akai Force Screen is: 1280x720 and you must specify values between these to send touch.
-if you use the screenshot feature, the resulting image is 1280x800, so you need to first resize (disregarding aspect ratio)
+The Akai Force Screen is: 1280x720 and you must specify values between these to send touch.
+
+** If you use the screenshot feature, the resulting image is 1280x800, so you need to first resize (disregarding aspect ratio) TO 1280X720,
 in a computer program like photoshop or photopea (https://www.photopea.com/) to resize and use info window to see co-ordinates of various elements.
 
 The Touch Commands Syntax: Touch Commands Use a very Specific Syntax where you can tell it what window/view to open and give it where X,Y values for location to touch at.
@@ -374,12 +376,11 @@ the Format of Command is:
 
  TOUCH~PAGE-NAME~Identifier~XxY (X,and Y Position to Generate Touch at).
 
-Where PAGE-NAME can be any valid Force showing Function , Such as MENU,SAMPLER,LOOPER.
+Where PAGE-NAME can be any valid Force Screen showing Function , Such as MENU,SAMPLER,LOOPER.
 for EXAMPLE: 
 
 TOUCH~SAMPLER~AUTOSAMPLER~1110x440
-translates to show SAMPLER (SAMPLER) and touch at 1110x440 which happens to be AutoSampler button.
-
+translates to SHOW-SAMPLER (SAMPLER) and touch at 1110x440 which happens to be AutoSampler button.
 
 ##### The Menu Page #########
 The Menu is divided in 5x5 buttons that can be rearranged, hence generic Names
@@ -396,7 +397,7 @@ This is good if you are sitting at a master keyboard and want to go through some
 
 SHIFT++ :only use before a touch operation when shift button press is required for on screen
 
-Below are SOme Pre-defined Touch Commands you can assign to Midi Note, CC or Surface Trigger.
+Below are Some Pre-defined Touch Commands you can assign to Midi Note, CC or Surface Trigger.
 
 TOUCH~MENU~TUNER~910x56  #'show tuner pop up'
 
@@ -430,8 +431,8 @@ TOUCH~MENU~MENU-23~630x640
 TOUCH~MENU~MENU-24~910x640
 TOUCH~MENU~MENU-25~1160x640
 
-TOUCH~NONE~NONE~1280x0  # very useful to send a touch to what is currently on Screen at Provided Location.
-                        # 1280x0 is top most first pixel on screen. this location is good to get rid of certain pop-ups.
+TOUCH~NONE~NONE~0x0  # very useful to send a touch to what is currently on Screen at Provided Location.
+                        # 0x0 is top most first pixel on screen. this location is good to get rid of certain pop-ups.
 
 
 #Sampler Page 
