@@ -53,7 +53,7 @@ MockbaMod implements the following (always evolving) list of features:
 * **Multi boot** - Allows the selection of older (to some extent) formware upon starting a project. This helps test things in older versions of the firmware without reflashing the unit.
 * **SSH/SFTP Access** - This adds remote filesystem access to the Force, which is great for copying files to and from the unit without having to move USB devices or SD cards back and forth.
 * **Custom Arpeggios** - Filesystem access allows modification/addition of arpeggio files.
-* **AddOn manager** - Allows managing addons installed on the device.
+* **AddOn manager** - Allows managing addons installed on the device. Run the command **addon-manager** in Mac/Linux Terminal or [Putty (windows)](https://www.putty.org/)
 * **Multiple AddOns** - MockbaMod supports multiple addons, listed below:
 
   - **PushLua** - Implements native support to the Push 1 as an additional padboard for the Force for playing notes, drums, etc. with no computer needed.
@@ -63,6 +63,7 @@ MockbaMod implements the following (always evolving) list of features:
   - **dxSEX** - CC to Sysex Converter for DX7, VolcaFM, Dexed for Akai Force.
   - **NodeServer** - Implements a Web Application Server for Akai Force Hosting many Apps.
   - **CustomBufferSize** - ALSA Api Middleware To Allow Custom Period/Buffer Sizes.
+  - **CustomArpPatterns** - This AddOn allows you to easily add your own midi files as arp patterns.
   - **emmcRepair** - A Tool to Repair corruption of internal emmc that does happen from time to time.
   - **VNCServer** - Stream Force Screen to your Desktop/Phone Vnc Client (touch/mouse supported).
   - **SoundBrowserUI** - Custom UI Skin For Sound Browser (Dark / Better Contrast).
