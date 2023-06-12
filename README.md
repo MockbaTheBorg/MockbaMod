@@ -30,7 +30,7 @@ When booting the Force with the SD card inserted, MockbaMod will load the modifi
 
 When installing this latest v4 over previous versions of MockbaMod, it will remove the previous version to avoid conflicts. This is normal and should occur only the first time an SD card is created/used.
 
-NOTE: Prior to installation, your internal emmc (/media/az01-internal) will be checked for corruption and will be repaired using standard linux tools that come pre-installed on Force (fsck.ext4)
+NOTE: Prior to installation, your internal emmc (/media/az01-internal) will be checked for corruption and will be repaired using standard linux tools that come pre-installed on Force (fsck.ext4)<br>We have decided to add this step as we have found that some uses were experiencing strange behaviors, like crashes and loss of wifi configuration due to a corrupt filesystem.<br>This is teur for both modded and unmodded firmwares, the only difference with modded is that we can repair it during our boot process.
 
 IMPORTANT: MockbaMod consists of two parts: the modded firmware and the SD card contents. There may be updated SD card contents without a new Akai firmware release, and vice versa. It is not mandatory to reinstall the firmware image when a new SD card image is available, nor the SD image when a new firmware is released.
 <hr>
