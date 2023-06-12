@@ -3,6 +3,8 @@
 ### Modded Firmware for the Akai Force
 This repository contains information about MockbaMod and the basic contents of a SD card.<br>
 With the information contained here people should be able to install/uninstall MockbaMod and create their own customized SD card.<br>
+<br>
+It is **VERY IMPORTANT** that you read this entire readme file before attempting to install MockbaMod.
 <hr>
 
 ### Repository Folders
@@ -13,10 +15,16 @@ With the information contained here people should be able to install/uninstall M
 <hr>
 
 ### Latest Version
-**MockbaMod**: 3.2.5.1 - https://mega.nz/file/cfAnUIjK#NaJBnRQxlm4sS3Io5_A2atHvrP_Abir19mLXoInpSo0 <br>
-**SD Card**: 4.08 - https://mega.nz/file/FexABKgI#dOyL4QwdUje8JhBXk0Tezx7BJAr_QFjv1ETrB6D91aA <br>
+The MockbaMod is composes of two parts, which we call "images". There's the firmware part, which replaces Akai's firmware on your Force, and the SD Card part, which is read by the firmware to enable the additional functionality of MockbaMod.<br>
 
-Discord: https://discord.gg/HvNBpArSSa
+This is the firmware image, which is applied to your Force via USB upgrade:<br>
+* **MockbaMod**: 3.2.5.1 - https://mega.nz/file/cfAnUIjK#NaJBnRQxlm4sS3Io5_A2atHvrP_Abir19mLXoInpSo0 <br>
+
+This is the card contents image, which is extracted to the root folder of your SD card:<br>
+* **SD Card**: 4.08 - https://mega.nz/file/FexABKgI#dOyL4QwdUje8JhBXk0Tezx7BJAr_QFjv1ETrB6D91aA <br>
+
+For additinal information join our Discord at: <br>
+* https://discord.gg/HvNBpArSSa
 <hr>
 
 ### Installation / Utilization
