@@ -69,3 +69,4 @@ MockbaMod implements the following (always evolving) list of features:
   - **VNCServer** - Stream Force Screen to your Desktop/Phone Vnc Client (touch/mouse supported).
   - **SoundBrowserUI** - Custom UI Skin For Sound Browser (Dark / Better Contrast).
   - **MidiLoop** - Implements the automation functionality plus command macros, key combos, screenshots, video capture, midi interface blocklist. (MidiLoop is always installed by default)
+  - **MPC FX Racks** - MPC Fx Rack Presets For Akai Force (Not Supplied with Force) 
