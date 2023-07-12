@@ -54,6 +54,7 @@ MockbaMod implements the following (always evolving) list of features:
 * **Multi boot** - Allows the selection of older (to some extent) formware upon starting a project. This helps test things in older versions of the firmware without reflashing the unit.
 * **SSH/SFTP Access** - This adds remote filesystem access to the Force, which is great for copying files to and from the unit without having to move USB devices or SD cards back and forth.
 * **Custom Arpeggios** - Filesystem access allows modification/addition of arpeggio files.
+* **Tempo Automation** - Both Absolute and Relative Tempo Automation Support (Beta).
 * **AddOn manager** - Allows managing addons installed on the device. Run the command **addon-manager** in Mac/Linux Terminal or [Putty (windows)](https://www.putty.org/)
 * **Multiple AddOns** - MockbaMod supports multiple addons, listed below:
 
