@@ -1,0 +1,63 @@
+This Files Documents Various Macros that can be assgined to any trigger in MIdiloop.
+Macros are multiple chained commands that occour one after the another, facilitating some automation.
+Please Entire macro should be copied to your midiloop.config on a "single line"
+__________________________________________________________________________________________________
+
+**** Select First Clip Slot
+TRACKS-PAGE-1 WAITx100 PAGE-1 WAITx10 SELECT-CLIP-1
+
+**** Previous Preset on a Plugin Track
+TOUCH~SHOW-EDITOR~FOCUS-PRESET~775x20 VALUE--x1 #PREV PRESET
+
+**** Next Preset on a Plugin Track
+TOUCH~SHOW-EDITOR~FOCUS-PRESET~775x20 VALUE++x1 #NEXT PRESET
+
+**** Added FadeIn/FadeOut to Currently Selected Audio Clip (Mainly used to remove clips and pops from recorded audio)
+TOUCH~SHOW-CLIP~grid~120x50 WAITx1 TOUCH~AT~MARQUEE~380x50 TOUCH~AT~CLIP~320x250 TOUCH~AT~CLIP~320x250 TOUCH~AT~FADEOUT~180x620  WAITx2 VALUE--x100 WAITx100 VALUE++x11  WAITx5 TOUCH~AT~FADEIN~60x620 WAITx1 VALUE--x200  WAITx1 VALUE++x11   #add-fades
+
+**** Midi Settings
+PREFERENCES WAITx100 TOUCH~NONE~MIDI-SYNC~64x480 #midi sync of project defaults
+
+**** Show Resources / Memory Usage
+SHOW-MATRIX WAITx1 TOUCH~MENU~RESOURCES~1180x50 #RESOURCES/MEMORY
+
+**** Show Project Info
+SHOW-MATRIX WAITx1 TOUCH~MENU~PROJECT~880x150
+
+**** View Undo History
+SHOW-MATRIX WAITx1 TOUCH~MENU~HISTORY~830x50
+
+**** View Midi Monitor
+SHOW-MATRIX WAITx1 TOUCH~MENU~MONITOR~980x0
+
+**** Purge Unused Samples
+SHOW-MATRIX WAITx2 TOUCH~MENU~MENU-4~910x150 WAITx10 TOUCH~NONE~PURGE~1050x700 WAITx10 TOUCH~NONE~UNUSED~680x700 WAITx10 TOUCH~NONE~POOFANYDIALOGS~0x0 MENU  #purge unused samples
+
+**** Set Keygroup/Drum Kit to Monophonic
+TOUCH~SHOW-EDITOR~GLOBAL~64x700 WAITx5 TOUCH~NONE~POLY~96x650 WAITx1 VALUE--x32 WAITx1 VALUE--x32 WAITx2 VALUE++x1 #SET Kit/Keygroup to Monophonic
+
+**** Set KEygroup/DrumKit to Polyphonic
+TOUCH~SHOW-EDITOR~GLOBAL~64x700 WAITx5 TOUCH~NONE~POLY~96x650 VALUE--x32 WAITx1 VALUE--x32  #SET Kit/Keygroup to Polyphonic
+
+**** Toggle Automation Read/Write
+TOUCH~SHOW-CLIP~CLIP~60x50 WAITx1 TOUCH~NONE~AUTO~400x50 #AUTOMATION READ/WRITE
+
+**** Show TC Window
+TOUCH~SHOW-CLIP~CLIP~180x50 WAITx1 TOUCH~NONE~TC~60x700 #TC WINDOW
+
+**** Show List View
+TOUCH~SHOW-CLIP~LIST~280x50 #LIST VIEW
+
+**** Back To Arrange (Arrange Window)
+TOUCH~SHOW-CLIP~Arrange~60x50 WAITx1 TOUCH~NONE~BACKTO~1200x700  #BACK TO ARRANGE
+
+**** Grid View
+TOUCH~SHOW-CLIP~grid~120x50 #Grid VIEW
+
+**** Clip View
+TOUCH~SHOW-CLIP~CLIP~180x50 #CLIP VIEW
+
+
+
+
+
