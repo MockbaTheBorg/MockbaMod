@@ -24,6 +24,10 @@ This is the firmware image, which is applied to your Force via USB upgrade:<br>
 
 This is the card contents zip archive, which is extracted to the root folder of your SD card:<br>
 * **SD Card**: 4.08 - https://mega.nz/file/FexABKgI#dOyL4QwdUje8JhBXk0Tezx7BJAr_QFjv1ETrB6D91aA <br>
+### Emmc Repair Only
+This is the card contents zip archive for Emmc Repair Tool Only, which is extracted to the root folder of your SD card (This does not install any mods to your Force):<br>
+Instructions are included the SD Card Zip File.. <br>
+* **Emmc Repair SD Card**: https://mega.nz/file/s5YhmKiB#WXYkVaiHW2b4UFHFqThiTskd1sJLj3_NXuaArE6f1TQ
 
 For additinal information join our Discord at: <br>
 * https://discord.gg/HvNBpArSSa
