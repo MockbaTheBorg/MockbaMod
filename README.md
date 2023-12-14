@@ -38,7 +38,7 @@ For additinal information join our Discord at: <br>
 To install the modded firmware, follow the same procedure as the regular firmware. Write the .img file to the root of an SD card, USB key, or SSD, and execute the USB firmware update from the Settings menu. If prompted during installation, accept the reinstallation.
 The install procedure is EXACTLY the same as Akai's for USB upgrade. Just use the modded image instead of Akai's.
 
-To create the required SD card, download the SD card image and extract it to the root of an ExFat-formatted SD card named 662522. Renaming the card after formatting may not work (needs confirmation). The SD card must have the MockbaMod folders and the boot.sh file in its root folder.
+To create the required SD card, download the SD card zip archive and extract it to the root of an ExFat-formatted SD card named 662522. Renaming the card after formatting may not work (needs confirmation). The SD card must have the MockbaMod folders and the boot.sh file in its root folder.
 
 When booting the Force with the SD card inserted, MockbaMod will load the modifications. Without the SD card, the Force will execute the original Akai firmware without changes.
 
