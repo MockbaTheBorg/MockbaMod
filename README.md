@@ -1,7 +1,7 @@
 # MockbaMod
 
 ### Modded Firmware for the Akai Force
-(Note: Mockba Mod is **NOT a Custom Firmware**. It still runs the Factory Firmware)<br>
+(Note: MockbaMod is **NOT a Custom Firmware**. It still runs the Factory Firmware)<br>
 This repository contains information about MockbaMod and the basic contents of a SD card.<br>
 With the information contained here people should be able to install/uninstall MockbaMod and create their own customized SD card.<br>
 <br>
