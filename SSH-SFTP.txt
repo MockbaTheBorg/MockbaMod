@@ -1,0 +1,21 @@
+MockbaMod Also Enables SSH Access to Your Force
+With SSH, You can 
+1: Run Commands on FORCE, Like the "addon-manager" command required to install and update addon apps for MockbaMod.
+2: Using SFTP Clients you can browse, download and upload Files to your force form your computer/phone/tablet.
+3: Using SSHFS you can mount your Force Files System natively to your computer like a drive (over wifi/network while Force is Running)
+
+Credentials:
+Username : root
+Password : force
+
+Windows: 
+1: You can use WSL terminal  (if installed) and use the following command in wsl shell:  ssh root@ip-address-of-force for example ssh root@192.168.2.78 (if ip of your force is 192.168.2.78)
+The ip-address can be found by going to wifi screen , pressing shift and clicking the info button that shows up.
+or you can download and install terminal client like putty and configure it with above credentials.
+
+2:  IN your Ftp software enter ip-address as host and the credential for username/login and the paassword to connect.
+
+Mac/Linux :
+1: Use same commands as above in Mac/Linux Terminal : ssh root@ip-address-of-force 
+
+
