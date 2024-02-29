@@ -69,6 +69,7 @@ MockbaMod implements the following (always evolving) list of features:
   - **PushLua** - Implements native support to the Push 1 as an additional padboard for the Force for playing notes, drums, etc. with no computer needed.
   - **DropSeq** - Implements a Special Drop Weight-based 4 Track Midi Sequencer.
   - **Euclidier** - Implements a headless 8 Track Euclidean sequencer for Akai Force.
+  - **RiffMaker4T** - 4 Track Monophonic Midi Generator/Sequencer with Realtime Transpose,Accents/Slides (303). Great for Basslines/Arps/Acid and Melodic Percussion.  
   - **SoX** - SoX (Sound eXchange) is the Swiss Army knife of sound processing tools.
   - **dxSEX** - CC to Sysex Converter for DX7, VolcaFM, Dexed for Akai Force.
   - **NodeServer** - Implements a Web Application Server for Akai Force Hosting many Apps.
