@@ -14,8 +14,12 @@ It is **VERY IMPORTANT** that you read this entire readme file before attempting
 * **AddOns** - All the MockbaMod add-ons available are listed in the .psv file stored here.
 * **Apps** - Apps which can be called from the load menu.
 <hr>
+### For Force FW 3.5 or Above
+Please visit/follow the discord group to find the latest firmware and sd card downloads. 
+https://discord.gg/HvNBpArSSa
 
-### Latest Version
+
+### For Force FW 3.3.x or below
 The MockbaMod is composed of two parts, which we call "images". There's the firmware part, which replaces Akai's firmware on your Force, and the SD Card part, which is read by the firmware to enable the additional functionality of MockbaMod.<br>
 
 This is the firmware image, which is applied to your Force via USB upgrade:<br>
