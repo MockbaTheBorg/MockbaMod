@@ -32,6 +32,7 @@ and loads extra scripts from there... It still Runs the **Stock Factory** Firmwa
 
 This is the card contents zip archive, which is extracted to the root folder of your SD card:<br>
 * **SD Card**: 4.08 - https://mega.nz/file/FexABKgI#dOyL4QwdUje8JhBXk0Tezx7BJAr_QFjv1ETrB6D91aA <br>
+This SD card is for MockbaMod up to v3.3 only. There is no official release of a SD card for the v3.6 (yet).<br>
 
 ### MidiLoop Update: 
 MidiLoop is the Brain of MockbaMod, SD Card Ships with an Early Version of MidiLoop so you should update to Latest (Bug Fixes and New Features) by Downloading the Following Zip archive and Replacing/Overwriting Existing MidiLoop Folder with the one in the Below Archive. Latest MidiLoop can also be installed via the addon-manager or adm command from a terminal via ssh on Force.
